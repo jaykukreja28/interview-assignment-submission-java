@@ -11,6 +11,22 @@ public class Main {
 
         //toString() is overriden to get the state of object i.e the instance variables.
         //if toString() is not overriden, then we would be able to the hashcode value assigned to the object stored in ref var.
-        System.out.println(obj1);
+        obj1.enrollCourse("Java");
+        //obj1.enrollCourse("C++");
+        //obj1.enrollCourse("Jamshedpur");
+        obj1.enrollCourse("C++");
+
+        //System.out.println(obj1);
+        obj1.printStudentInfo();
+
+        Student obj2 = new Student("Mango Vihari",27,"S-125");
+        obj2.enrollCourse("C++");
+        obj2.printStudentInfo();
+
+
+        Student obj3 = new Student("Mannu Master",28,"S-128");
+        obj3.enrollCourse("DevOps");
+        obj3.printStudentInfo();
+
     }
 }

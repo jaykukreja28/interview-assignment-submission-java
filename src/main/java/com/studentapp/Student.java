@@ -49,8 +49,26 @@ public class Student {
 
 
     public void enrollCourse(String course) {
-        courses.add(course);
-        System.out.println("Student is enrolled to: " + course + " successfully.");
+        if(courses.contains(course)){
+            System.err.println("Student is already enrolled to the "+course);
+        }else{
+            if(validateCourseName(course)){
+                courses.add(course);
+                System.out.println("Student is enrolled to: " + course + " successfully.");
+            }
+
+        }
+
+    }
+
+    public boolean validateCourseName(String course){
+        if(course.equalsIgnoreCase("Java") || course.equalsIgnoreCase("C++") || course.equalsIgnoreCase("DevOps")){
+            return true;
+        }
+        else{
+            System.err.println("Please enter valid COurse Name");
+            return false;
+        }
     }
 
     @Override
@@ -103,5 +121,35 @@ public class Student {
         }
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
+    }
+
+    public List<String> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<String> courses) {
+        this.courses = courses;
+    }
 }
