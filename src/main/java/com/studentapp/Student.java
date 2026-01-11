@@ -38,10 +38,9 @@ public class Student {
         String studentIdRegex = "S-\\d+$"; // '+' Many combinations like S-001 S-010 ... or S-\\d+$
         Pattern studentIdPattern = Pattern.compile(studentIdRegex);
         Matcher studentIdMatcher = studentIdPattern.matcher(studentId);
-        if(studentIdMatcher.matches()){
+        if (studentIdMatcher.matches()) {
             return true;
-        }
-        else{
+        } else {
             System.err.println("Invalid Name !! enter S- and followed by Digits :)");
             return false;
         }
@@ -49,10 +48,10 @@ public class Student {
 
 
     public void enrollCourse(String course) {
-        if(courses.contains(course)){
-            System.err.println("Student is already enrolled to the "+course);
-        }else{
-            if(validateCourseName(course)){
+        if (courses.contains(course)) {
+            System.err.println("Student is already enrolled to the " + course);
+        } else {
+            if (validateCourseName(course)) {
                 courses.add(course);
                 System.out.println("Student is enrolled to: " + course + " successfully.");
             }
@@ -61,11 +60,10 @@ public class Student {
 
     }
 
-    public boolean validateCourseName(String course){
-        if(course.equalsIgnoreCase("Java") || course.equalsIgnoreCase("C++") || course.equalsIgnoreCase("DevOps")){
+    public boolean validateCourseName(String course) {
+        if (course.equalsIgnoreCase("Java") || course.equalsIgnoreCase("C++") || course.equalsIgnoreCase("DevOps")) {
             return true;
-        }
-        else{
+        } else {
             System.err.println("Please enter valid COurse Name");
             return false;
         }
@@ -73,12 +71,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", studentId='" + studentId + '\'' +
-                ", courses=" + courses +
-                '}';
+        return "Student{" + "name='" + name + '\'' + ", age=" + age + ", studentId='" + studentId + '\'' + ", courses=" + courses + '}';
     }
 
     public void printStudentInfo() {
@@ -112,10 +105,9 @@ public class Student {
         //compile method returns a Pattern since it is a static method
         Pattern namePattern = Pattern.compile(nameRegexExpected);
         Matcher nameMatcher = namePattern.matcher(name);
-        if(nameMatcher.matches()){
+        if (nameMatcher.matches()) {
             return true;
-        }
-        else{
+        } else {
             System.err.println("Invalid Name !! enter alphabets only :)");
             return false;
         }
@@ -125,31 +117,14 @@ public class Student {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public int getAge() {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     public String getStudentId() {
         return studentId;
     }
 
-    public void setStudentId(String studentId) {
-        this.studentId = studentId;
-    }
-
-    public List<String> getCourses() {
-        return courses;
-    }
-
-    public void setCourses(List<String> courses) {
-        this.courses = courses;
-    }
 }
